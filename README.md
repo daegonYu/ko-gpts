@@ -56,7 +56,7 @@ finetune_kullm_polyglot.py \
 
 <br>
 
-finetuninig.ipynb에서는 질문과 답변 셋만 필요함(예시는 필요없음)
+### finetuninig.ipynb에서는 질문과 답변 셋만 필요함(예시는 필요없음)
 
 <br>
 
