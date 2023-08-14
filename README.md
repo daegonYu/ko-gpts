@@ -3,9 +3,8 @@
 1. 각각의 모델들은 모델 이름으로 적힌 ipynb 파일로 따로 돌릴 수 있으며 모델들을 모아놓은 코드는 comparison.ipynb 파일입니다. (사용하실 때 GPU RAM 부족시 ipynb 상단의 Restart 해주세요.)
 2. comparison.py는 streamlit으로 웹을 띄워서 각각의 모델을 비교할 수 있게 해놓았습니다.
 3. finetune_kullm_polyglot.py는 그 중 성능이 제일 좋다고 생각한 nlpai-lab/kullm-polyglot-5.8b-v2 모델을 파인튜닝하는 코드입니다. 
-4. <a target="_blank" href="https://colab.research.google.com/github/daegonYu/ko-gpts/blob/master/polyglot_ko_12_8b%EB%AA%A8%EB%8D%B8_%EB%82%98%EC%9D%98%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%95%99%EC%8A%B5_%EC%A0%84%ED%9B%84%EB%B9%84%EA%B5%90.ipynb"> 
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> </a>
-
+4. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/daegonYu/ko-gpts/blob/master/polyglot_ko_12_8b%EB%AA%A8%EB%8D%B8_%EB%82%98%EC%9D%98%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%95%99%EC%8A%B5_%EC%A0%84%ED%9B%84%EB%B9%84%EA%B5%90.ipynb)
+코랩으로 데이터를 학습하기 전과 후의 챗봇의 답변 변화가 어떻게 다른지 확인해보세요.
 
 <br>
 
