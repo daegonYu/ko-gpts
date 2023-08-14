@@ -1,12 +1,15 @@
 이 레퍼지토리는 한국어 GPT 모델들을 직접 사용해보고 비교해 볼 수 있도록 한국어 GPT 모델들을 모아놓은 레퍼지토리입니다. 라이센스는 모두 apache-2.0 나 MIT로 상업적으로 사용가능합니다.
 
-1. 각각의 모델들은 모델 이름으로 적힌 ipynb 파일로 따로 돌릴 수 있으며 모델들을 모아놓은 코드는 comparison.ipynb 파일입니다. (사용하실 때 GPU RAM 부족시 ipynb 상단의 Restart 해주세요.)
-2. comparison.py는 streamlit으로 웹을 띄워서 각각의 모델을 비교할 수 있게 해놓았습니다.
-3. finetune_kullm_polyglot.py는 그 중 성능이 제일 좋다고 생각한 nlpai-lab/kullm-polyglot-5.8b-v2 모델을 파인튜닝하는 코드입니다. 
-4. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/daegonYu/ko-gpts/blob/master/polyglot_ko_12_8b%EB%AA%A8%EB%8D%B8_%EB%82%98%EC%9D%98%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%95%99%EC%8A%B5_%EC%A0%84%ED%9B%84%EB%B9%84%EA%B5%90.ipynb)
-코랩으로 데이터를 학습하기 전과 후의 챗봇의 답변 변화가 어떻게 다른지 확인해보세요.
-
+1. 각각의 모델들은 모델 이름으로 적힌 ipynb 파일로 따로 돌릴 수 있으며(사용하실 때 GPU RAM 부족시 ipynb 상단의 Restart 해주세요.) 모델들을 모아놓은 코드는 comparison.ipynb 파일입니다. 
+2. comparison.py는 streamlit으로 웹을 띄워서 각각의 모델을 비교할 수 있게 해놓았습니다. (새로고침시 GPU RAM을 중복으로 사용하므로 비추천) 
+3. finetune_kullm_polyglot.py는 그 중 성능이 제일 좋다고 생각한 nlpai-lab/kullm-polyglot-5.8b-v2 모델을 파인튜닝하는 코드입니다.
+4. 그 외의 나머지 모델의 파인튜닝은 finetuninig.ipynb 을 통해 할 수 있습니다. 
+5. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/daegonYu/ko-gpts/blob/master/polyglot_ko_12_8b%EB%AA%A8%EB%8D%B8_%EB%82%98%EC%9D%98%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%95%99%EC%8A%B5_%EC%A0%84%ED%9B%84%EB%B9%84%EA%B5%90.ipynb)
+재미삼아 코랩으로 데이터를 학습하기 전과 후의 챗봇의 답변 변화가 어떻게 다른지 확인해보세요.
 <br>
+자세한 사항은 밑에 "ipynb 별 설명"을 참고하시길 바랍니다.
+
+<br><br>
 
 ### 참고한 GitHub, Hugging Face
 1. https://github.com/nlpai-lab/KULLM
@@ -37,9 +40,9 @@
 streamlit run comparison.py
 ```
 
-<br>
+<br><br>
 
-finetune_kullm_polyglot.py 를 이용하여 가장 괜찮은 성능을 뽐내는 kullm 모델을 자신의 데이터로 파인튜닝 할 수 있습니다.
+### finetune_kullm_polyglot.py 를 이용하여 가장 괜찮은 성능을 뽐내는 kullm 모델을 자신의 데이터로 파인튜닝 할 수 있습니다.
 - data_path -> 자신의 데이터 경로로 변경
 - data 컬럼 : instruction, input, output
 - instruction : 명령어, input : 예시, output : 답변 (참고 스탠퍼드에서 만든 Alpaca 데이터셋 의 경우 input이 들어간 데이터의 비율이 40%임. https://crfm.stanford.edu/2023/03/13/alpaca.html)
@@ -80,7 +83,7 @@ polyglot-ko 모델
 3. 챗봇 개발이 어려운 이유
    - 높은 진입 장벽 : 사전학습에 쓰이는 대단히 많은 데이터가 필요하고 무엇보다 많은 GPU가 필요함(llama-2의 경우 사전학습하는데 A100(80GB) 2048개가 쓰였으며 전기료만 수십억이 들었을 것으로 예상됨(https://moon-walker.medium.com/%EB%A6%AC%EB%B7%B0-meta-ai%EC%9D%98-small-gaint-model-llama-large-language-model-meta-ai-334e349ed06f)) 
     
-4. 자신만의 특화된 데이터 필요 : 이루다를 만들기 위해서는 수많은 사용자의 대화 데이터가 필요하고 레시피 추천을 위해서는 많은 레시피 데이터가 필요하다. 따라서 갖고 있는 데이터가 곧 경쟁력이라 생각한다.
+4. 자신만의 특화된 데이터 필요 : 이루다를 만들기 위해서는 수많은 사용자의 대화 데이터가 필요하고 레시피 추천을 위해서는 많은 레시피 데이터가 필요하다. 따라서 갖고 있는 데이터가 곧 경쟁력이라 생각합니다.
 
 <br><br>
 
